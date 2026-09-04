@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div>
+            <h1>Kanban Board</h1>
+            <p>Organize your work and stay productive.</p>
+        </div>
+
+        <button id="addBoardBtn" class="primary-btn">
+            + New Board
+        </button>
+    </header>
+
+    <main>
+
+        <!-- Board Selection -->
+        <section class="board-section">
+
+            <div class="board-header">
+                <div>
+                    <label for="boardSelect">Current Board</label>
+                    <select id="boardSelect"></select>
+                </div>
+
+                <button id="deleteBoardBtn" class="danger-btn">
+                    Delete Board
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- Kanban Board -->
+        <section id="kanbanBoard" class="kanban-board">
+            <!-- Columns will be added here -->
+        </section>
+
+    </main>
+
+
+    <!-- Board Modal -->
+    <div id="boardModal" class="modal hidden">
+        <div class="modal-content">
+
+            <button class="close-btn" id="closeBoardModal">×</button>
+
+            <h2>Create Board</h2>
+
+            <input
+                type="text"
+                id="boardNameInput"
+                placeholder="Board name"
+            >
+
+            <button id="saveBoardBtn" class="primary-btn">
+                Create Board
+            </button>
+
+        </div>
+    </div>
+
+
+    <!-- Column Modal -->
+    <div id="columnModal" class="modal hidden">
+        <div class="modal-content">
+
+            <button class="close-btn" id="closeColumnModal">×</button>
+
+            <h2>Create Column</h2>
+
+            <input
+                type="text"
+                id="columnNameInput"
+                placeholder="Column name"
+            >
+
+            <button id="saveColumnBtn" class="primary-btn">
+                Add Column
+            </button>
+
+        </div>
+    </div>
+
+
+    <!-- Card Modal -->
+    <div id="cardModal" class="modal hidden">
+        <div class="modal-content">
+
+            <button class="close-btn" id="closeCardModal">×</button>
+
+            <h2>Add Card</h2>
+
+            <input
+                type="text"
+                id="cardTitleInput"
+                placeholder="Card title"
+            >
+
+            <textarea
+                id="cardDescriptionInput"
+                placeholder="Description (optional)"
+            ></textarea>
+
+            <button id="saveCardBtn" class="primary-btn">
+                Add Card
+            </button>
+
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,310 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f5f7;
+    color: #172b4d;
+    min-height: 100vh;
+}
+
+
+/* =====================
+   HEADER
+===================== */
+
+.topbar {
+    background: #ffffff;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.topbar h1 {
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.topbar p {
+    color: #6b778c;
+    font-size: 14px;
+}
+
+
+/* =====================
+   BUTTONS
+===================== */
+
+button {
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.primary-btn {
+    background: #2563eb;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+}
+
+.primary-btn:hover {
+    background: #1d4ed8;
+}
+
+.danger-btn {
+    background: #fee2e2;
+    color: #b91c1c;
+    padding: 9px 14px;
+    border-radius: 6px;
+}
+
+.danger-btn:hover {
+    background: #fecaca;
+}
+
+
+/* =====================
+   BOARD SELECT
+===================== */
+
+main {
+    padding: 25px 30px;
+}
+
+.board-section {
+    margin-bottom: 25px;
+}
+
+.board-header {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    border: 1px solid #ddd;
+}
+
+.board-header label {
+    display: block;
+    font-size: 13px;
+    color: #6b778c;
+    margin-bottom: 5px;
+}
+
+#boardSelect {
+    min-width: 220px;
+    padding: 9px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+/* =====================
+   KANBAN
+===================== */
+
+.kanban-board {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+
+.column {
+    background: #e9ecef;
+    width: 280px;
+    min-width: 280px;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.column-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.column-header h3 {
+    font-size: 16px;
+}
+
+.column-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.small-btn {
+    background: transparent;
+    padding: 4px 7px;
+    border-radius: 4px;
+}
+
+.small-btn:hover {
+    background: #d5d8dc;
+}
+
+
+/* =====================
+   CARDS
+===================== */
+
+.cards {
+    min-height: 30px;
+}
+
+.card {
+    background: white;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    cursor: grab;
+}
+
+.card:active {
+    cursor: grabbing;
+}
+
+.card h4 {
+    margin-bottom: 6px;
+    font-size: 15px;
+}
+
+.card p {
+    font-size: 13px;
+    color: #6b778c;
+    line-height: 1.4;
+}
+
+.card-actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.add-card-btn,
+.add-column-btn {
+    width: 100%;
+    margin-top: 5px;
+    padding: 9px;
+    border-radius: 5px;
+    background: transparent;
+    text-align: left;
+    color: #5e6c84;
+}
+
+.add-card-btn:hover,
+.add-column-btn:hover {
+    background: #dce0e5;
+}
+
+.add-column-container {
+    min-width: 280px;
+}
+
+
+/* =====================
+   MODAL
+===================== */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-content {
+    width: 400px;
+    max-width: 90%;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+}
+
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    font-family: inherit;
+}
+
+.modal-content textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.close-btn {
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    background: transparent;
+    font-size: 24px;
+    color: #666;
+}
+
+
+/* =====================
+   MOBILE
+===================== */
+
+@media (max-width: 700px) {
+
+    .topbar {
+        padding: 18px;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .topbar h1 {
+        font-size: 21px;
+    }
+
+    .topbar p {
+        display: none;
+    }
+
+    main {
+        padding: 18px;
+    }
+
+    .board-header {
+        align-items: flex-start;
+        gap: 15px;
+        flex-direction: column;
+    }
+
+    #boardSelect {
+        width: 100%;
+    }
+
+    .column {
+        width: 260px;
+        min-width: 260px;
+    }
+}
